@@ -1,0 +1,412 @@
+/* ========== Global Reset ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #3a066a;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.page {
+  min-height: 100vh; 
+  
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  border: 2px solid wheat;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 7px auto;
+ 
+}
+
+
+
+
+/* =====================================================
+   HEADPAGE SECTION
+===================================================== */
+.headpage {
+  position: relative;
+  height: 120px;
+  border: solid 2px wheat;
+  border-radius: 12px;
+  background: linear-gradient(to right, rgb(154, 113, 165), rgb(156, 237, 241));
+}
+
+/* Header title */
+.headpage h1 {
+  color: rgb(22, 21, 21);
+  text-align: center;
+  padding-top: 30px;
+  font-size: 44px;
+}
+
+/* Header button */
+.headpage .linkdin {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.linkdin img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+
+/* Profile photo inside header */
+.profile {
+  height: 120px;
+  width: 120px;
+  border: solid 2px rgb(85, 85, 84);
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 30px;
+  bottom: -60px; 
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.profile img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =====================================================
+   BODYPAGE SECTION
+===================================================== */
+.bodypage {
+  border: 2px solid wheat;
+  border-radius: 12px;
+  margin-top: 80px; 
+  background: linear-gradient(to right, rgb(154, 113, 165), rgb(156, 237, 241));
+  padding: 10px;
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+.about {
+  border: 2px solid rgb(85, 85, 84);
+  border-radius: 12px;
+  margin: 10px 4px;
+  background-color: rgb(218, 177, 231);
+  padding: 10px;
+}
+
+.about h3 {
+  margin-bottom: 8px;
+  color: #2c023d;
+}
+
+/* =====================================================
+   SKILLS SECTION
+===================================================== */
+.skills {
+  border: 2px solid rgb(85, 85, 84);
+  border-radius: 12px;
+  margin: 10px 4px;
+  background-color: rgb(218, 177, 231);
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-header {
+  width: 100%;
+  margin-bottom: 8px;
+  color: #2c023d;
+  text-align: center;
+ 
+}
+
+/* Skill cards */
+.skillCard {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  perspective: 600px;
+   
+}
+
+.skillcard_front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 45px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  border: 2px solid rgb(77, 4, 126);
+  background-color: rgb(85, 85, 84);
+  transform: rotateY(0deg);
+}
+
+.skillcard_front img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.skillcard_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  background-color: rgb(246, 238, 238);
+  transform: rotateY(180deg);
+}
+
+/* Flip effect */
+.skillCard:hover .skillcard_front {
+  transform: rotateY(180deg);
+}
+.skillCard:hover .skillcard_back {
+  transform: rotateY(360deg);
+}
+
+.icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 30%); /* start below */
+  opacity: 0;
+  font-size: 60px;
+  transition: transform 1s ease, opacity 1s ease;
+  color: #ff004c;
+  background: transparent;
+  
+}
+
+.icon img {
+ height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+.skillCard:hover .icon{
+   transform: translate(-50%, -50%); /* move to center */
+  top: 50%;
+  opacity: 1;
+}
+
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+.projects {
+  border: 2px solid rgb(85, 85, 84);
+  border-radius: 12px;
+  margin: 10px 4px;
+  background-color: rgb(218, 177, 231);
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectsHeader {
+   width: 100%;
+  margin-bottom: 8px;
+  color: #2c023d;
+  text-align: center;
+  margin: 5px;
+  
+}
+
+
+.project_card{
+    width: 200px;
+  height: 250px;
+  position: relative;
+  perspective: 600px;
+  background-color: #374151;
+  /* border: 3px solid black; */
+  border-radius:15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-top: 4px solid #06b6d4; /* Subtle accent border on top */
+    transition: transform 0.5s ease;
+    margin: 5px;
+}
+
+.project_card:hover {
+ transform: scale(1.03); 
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3); 
+}
+
+.linkToProject {
+  height: 40px;
+  width: 170px;
+  border: 2px solid black ;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 30px;
+  left:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+
+}
+.project_card:hover .linkToProject {
+  transform: translateY(-10px);
+  opacity: 1;
+}
+
+.linkToProject:hover {
+  background-color: rgb(215, 215, 120);
+}
+
+.linkToProject img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  left: 50
+}
+
+.projectOne {
+  height: 450px;
+  width: 480px;
+  background-color: rgb(21, 11, 11);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 12px;
+  border: 2px solid black;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+}
+
+
+
+.projectTwo {
+  height: 450px;
+  width: 480px;
+  background-color: rgb(21, 11, 11);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 12px;
+  border: 2px solid black;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s ease-out;
+}
+
+
+
+/* =====================================================
+   FOOTER SECTION
+===================================================== */
+.footer {
+  height: 50px;
+  border: solid 2px rgb(85, 85, 84);
+  border-radius: 12px;
+  margin-top: 20px;
+  background-color: #d4b7e3;
+  display: flex;
+}
+
+.git {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(228, 228, 228);
+  margin: 10px;
+  position: relative;
+  border-radius: 15px;
+  border: 1px solid black;
+
+}
+
+.git img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.mail{
+  height: 30px;
+  width: 30px;
+  background-color: rgb(228, 228, 228);
+  margin: 10px;
+  left: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.mail img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 600px) {
+  .profile {
+    height: 90px;
+    width: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -45px;
+  }
+
+  .bodypage {
+    margin-top: 60px;
+  }
+
+  .projectOne {
+  height: 400px;
+  width: 300px;
+}
+
+
+}
+
+
+
+@media (max-width: 800px) {
+  
+ 
+}
