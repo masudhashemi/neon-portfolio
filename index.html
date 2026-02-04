@@ -211,6 +211,28 @@
 
       </div>
 
+      <div class="others">
+        <div class="contact">
+          <h3>Contact Me</h3>
+          <p>I'd love to hear from you! Feel free to reach out for collaboration or inquiries.</p>
+          <div class="contact-info">
+            <p><strong>Email:</strong> masud.hashemi@email.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Location:</strong> San Francisco, CA</p>
+          </div>
+        </div>
+        <div class="resume">
+          <div class="resume-link" onclick="openResumeModal()">
+            <div class="resume-content">
+              <img src="icons/download.png" alt="View Resume" class="resume-icon">
+              <h4>View Resume</h4>
+              <p>Click to view in large</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
 
       <!-- this is the footer -->
 
@@ -520,6 +542,19 @@
 
       <div class="gitlink">
         <img src="icons/github2.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Modal -->
+  <div class="resumeModal" id="resumeModal">
+    <div class="resume-modal-content">
+      <img src="icons/cross.png" alt="close" class="resume-close-btn" onclick="closeResumeModal()">
+      <div class="resume-display">
+        <iframe src="path/to/your/resume.pdf" title="Resume"></iframe>
+      </div>
+      <div class="resume-modal-footer">
+        <a href="path/to/your/resume.pdf" download class="download-btn">Download PDF</a>
       </div>
     </div>
   </div>

@@ -155,3 +155,22 @@ closeProject4.onclick = function () {
   projectFour.classList.remove('show');
   blurBack.classList.remove('blur');
 }
+/* ========== RESUME MODAL FUNCTIONS ========== */
+const resumeModal = document.getElementById('resumeModal');
+
+function openResumeModal() {
+  resumeModal.classList.add('show');
+  blurBack.classList.add('blur');
+}
+
+function closeResumeModal() {
+  resumeModal.classList.remove('show');
+  blurBack.classList.remove('blur');
+}
+
+// Close modal when clicking outside the modal content
+window.onclick = function (event) {
+  if (event.target == resumeModal) {
+    closeResumeModal();
+  }
+}
